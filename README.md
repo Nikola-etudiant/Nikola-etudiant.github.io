@@ -1,2 +1,1259 @@
 # Nikola-etudiant.github.io
-Mon Portefolio
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Étudiant BTS SIO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Variables et reset */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #f49434;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --gray: #7f8c8d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        /* Navigation */
+        header {
+            background-color: var(--primary);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .menu-toggle {
+            display: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Sections générales */
+        section {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Hero section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #1a2530 100%);
+            color: white;
+            text-align: center;
+            padding: 10rem 5% 5rem;
+            margin-top: 60px;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            color: var(--light);
+        }
+        
+        .highlight {
+            color: var(--secondary);
+            font-weight: bold;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* À propos */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-img {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .about-img img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Compétences */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skill-category {
+            background-color: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary);
+        }
+        
+        .skill-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .skill-bar {
+            height: 10px;
+            background-color: #eee;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .skill-level {
+            height: 100%;
+            background-color: var(--secondary);
+            border-radius: 5px;
+        }
+        
+        /* Projets */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .project-img {
+            height: 200px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            font-size: 3rem;
+        }
+        
+        .project-info {
+            padding: 1.5rem;
+        }
+        
+        .project-info h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .tag {
+            background-color: var(--light);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        /* Expériences */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: var(--secondary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            margin-bottom: 3rem;
+            position: relative;
+            width: 50%;
+            padding-right: 3rem;
+        }
+        
+        .timeline-item:nth-child(even) {
+            margin-left: 50%;
+            padding-right: 0;
+            padding-left: 3rem;
+        }
+        
+        .timeline-content {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .timeline-content h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-date {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--secondary);
+            border-radius: 50%;
+            top: 15px;
+            right: -10px;
+        }
+        
+        .timeline-item:nth-child(even)::before {
+            right: auto;
+            left: -10px;
+        }
+        
+        /* Section News */
+        .news-section {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .news-container-wrapper {
+            position: relative;
+        }
+        
+        .news-container {
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 1rem 0;
+            scrollbar-width: none; /* Firefox */
+        }
+        
+        .news-container::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+        
+        .news-card {
+            flex: 0 0 calc(33.333% - 1.33rem);
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            min-width: 300px;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .news-header {
+            padding: 1.5rem 1.5rem 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .news-date {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .news-category {
+            display: inline-block;
+            background-color: var(--light);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-left: 0.5rem;
+        }
+        
+        .news-content {
+            padding: 1rem 1.5rem 1.5rem;
+        }
+        
+        .news-content h3 {
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+        
+        .news-content p {
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+        
+        .read-more {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        
+        .read-more:hover {
+            text-decoration: underline;
+        }
+        
+        /* Flèches de navigation News */
+        .news-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            z-index: 10;
+            transition: all 0.3s;
+            color: var(--primary);
+        }
+        
+        .news-nav:hover {
+            background-color: var(--secondary);
+            color: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .news-nav.prev {
+            left: -20px;
+        }
+        
+        .news-nav.next {
+            right: -20px;
+        }
+        
+        .news-nav i {
+            font-size: 1.2rem;
+        }
+        
+        /* Indicateurs de défilement */
+        .news-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+        
+        .news-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ddd;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .news-indicator.active {
+            background-color: var(--secondary);
+        }
+        
+        /* Contact */
+        .contact-container {
+            display: flex;
+            gap: 3rem;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-form {
+            flex: 1;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-icon {
+            background-color: var(--secondary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 2rem 5%;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-right: 0;
+                padding-left: 70px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                margin-left: 0;
+                padding-left: 70px;
+            }
+            
+            .timeline-item::before {
+                left: 20px;
+                right: auto;
+            }
+            
+            .news-card {
+                flex: 0 0 calc(50% - 1rem);
+            }
+            
+            .news-nav.prev {
+                left: 10px;
+            }
+            
+            .news-nav.next {
+                right: 10px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 60px;
+                left: -100%;
+                flex-direction: column;
+                background-color: var(--primary);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+                padding: 2rem 0;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .news-card {
+                flex: 0 0 calc(100% - 1rem);
+            }
+            
+            .news-nav {
+                display: none; /* Cacher les flèches sur mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <div class="logo">Portfolio <span>BTS SIO</span></div>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#experience">Expériences</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Nikola Mikulic - Étudiant en BTS SIO</h1>
+        <p>Spécialisé en <span class="highlight">Solutions d'Infrastructure, Systèmes et Réseaux (SISR)</span>, passionné par l'administration systèmes, la cybersécurité et l'avancée technologique !</p>
+        <a href="#projects" class="btn">Voir mes projets</a>
+    </section>
+
+    <!-- À propos -->
+    <section id="about">
+        <h2 class="section-title">À propos de moi</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Je suis actuellement en deuxième année de BTS SIO (Services Informatiques aux Organisations) option SISR au Lycée Réne Cassin de Strasbourg.</p>
+                <br>
+                <p>Mon parcours m'a permis d'acquérir des compétences solides en administration réseau, virtualisation, cybersécurité et gestion du parc informatique.</p>
+                <br>
+                <p>J'ai pu effectuer mes stages de BTS à la HEAR ou l'Haute école d'art du rhin, ce qui m'a permis de deployer toutes les connaissances apprises au sein de mon établissement, me permettant de contribuer à des projets intéressants et utiles.</p>
+                <br>
+                <p>Motivé, curieux et rigoureux, je suis capable de m'adapter rapidement aux nouvelles technologies et aux environnements de travail ainsi que de travailler en autonomie.</p>
+                <br>
+                <a href="#contact" class="btn">Me contacter</a>
+            </div>
+            <div class="about-img">
+                <div style="background-color: #3498db; color: white; height: 300px; display: flex; align-items: center; justify-content: center; border-radius: 10px;">
+                    <i class="fas fa-user" style="font-size: 8rem;"></i>
+                </div>
+                <!-- En vrai portfolio, remplacer par une photo -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Compétences -->
+    <section id="skills">
+        <h2 class="section-title">Compétences techniques</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Administration Système & Réseau</h3>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Windows Server</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Linux (Ubuntu, Debian)</span>
+                        <span>95%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 95%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Virtualisation (VMware, VirtualBox)</span>
+                        <span>95%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 95%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Réseaux TCP/IP</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 85%;"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Développement & Bases de données</h3>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>HTML/CSS/PowerShell</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>PHP/MySQL</span>
+                        <span>75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 75%;"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Cybersécurité & Outils</h3>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Sécurité des réseaux</span>
+                        <span>75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 75%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Wireshark</span>
+                        <span>70%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 70%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Git/GitHub</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 85%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Certifications</span>
+                        <span>100%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projets -->
+    <section id="projects">
+        <h2 class="section-title">Projets réalisés</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-img" style="background-color: #07fa40;">
+                    <i class="fas fa-mobile-alt" style="color: #ffffff; font-size: 3rem;"></i>
+                </div>
+                <div class="project-info">
+                    <h3>Installation d'un serveur MDM</h3>
+                    <p>Mise en place d'un serveur virtuel MDM utilisé pour géré les appareils Android de l'école. Cela permet notamment de créer un profile permenttant une séparation de la vie personel et professionnel sur un seul appareil.</p>
+                    <div class="project-tags">
+                        <span class="tag">Windows Server</span>
+                        <span class="tag">Android / IOS</span>
+                        <span class="tag">MDM</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-img" style="background-color: #3aacf7;">
+                    <i class="fas fa-chart-line" style="color: #ffffff; font-size: 3rem;"></i>
+                </div>
+                <div class="project-info">
+                    <h3>Mise en place d'un serveur SNMP</h3>
+                    <p>Création d'un serveur SNMP pour recuperer les données envoyer par les appareils réseaux via le protocole SNMP, cela permet un monitoring du trafic réseau, de l'utilisation du processeur ou de la memoire système ainsi que des VLANs.</p>
+                    <div class="project-tags">
+                        <span class="tag">Supervision</span>
+                        <span class="tag">Observium</span>
+                        <span class="tag">SNMP</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-img" style="background-color: #ee1b03;">
+                    <i class="fas fa-shield-alt" style="color: #ffffff; font-size: 3rem;"></i>
+                </div>
+                <div class="project-info">
+                    <h3>Réalisation d'une DMZ</h3>
+                    <p>Céation et configuration d'une DMZ virtuel sur VirtualBox.</p>
+                    <div class="project-tags">
+                        <span class="tag">DMZ</span>
+                        <span class="tag">Sécurité</span>
+                        <span class="tag">Réseau</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expériences & Stages -->
+    <section id="experience">
+        <h2 class="section-title">Expériences & Stages</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-date">Janvier - Février 2026</span>
+                    <h3>Stage - Assistant informatique</h3>
+                    <p><strong>Établissement :</strong> HEAR</p>
+                    <p>• Mise en place d'un serveur MDM pour la gestion du parc Smartphone<br>
+                       • Mise a jour de systemes Windows en Windows 11<br>
+                       • Assistance aux utilisateurs et résolution d'incidents</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-date">Juin - Juillet 2025</span>
+                    <h3>Stage - Assistant informatique</h3>
+                    <p><strong>Établissement :</strong> HEAR</p>
+                    <p>• Mise en place d'un serveur SNMP pour la surveillance du trrafic réseau<br>
+                       • Inventaire pour reyclages de materiel informatique obselète<br>
+                       • Formation des utilisateurs aux bonnes pratiques en utilisant des procédures créer par moi-même</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-date">2024</span>
+                    <h3>Projet : Tableau de score</h3>
+                    <p><strong>Entreprise :</strong> SMI de l'est</p>
+                    <p>• Création d'un serveur de déplyement Windows pour déployer des OS en réseau</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-date">2021 - 2024</span>
+                    <h3>Baccalauréat SN</h3>
+                    <p><strong>Option :</strong> C (Réseaux informatiques et systèmes communicants)</p>
+                    <p>• Initiation aux réseaux<br>
+                       • Projet de terminale : Tableau de score pour le gymnase du lycee</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section News -->
+    <section id="news" class="news-section">
+        <h2 class="section-title">News & Actualités</h2>
+        
+        <div class="news-container-wrapper">
+            <!-- Flèche gauche -->
+            <button class="news-nav prev" id="newsPrev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            
+            <!-- Conteneur des cartes News -->
+            <div class="news-container" id="newsContainer">
+                <!-- Article 1 -->
+                <div class="news-card">
+                    <div class="news-header">
+                        <span class="news-date">15 Mars 2025</span>
+                        <span class="news-category">Certification</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>Nouvelle Certification Cybersécurité</h3>
+                        <p>J'ai récemment obtenu la certification "Fundamentals of Cybersecurity" qui valide mes compétences en sécurité des systèmes d'information et protection des données.</p>
+                        <a href="#" class="read-more">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Article 2 -->
+                <div class="news-card">
+                    <div class="news-header">
+                        <span class="news-date">10 Février 2025</span>
+                        <span class="news-category">Projet</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>Participation à un Hackathon</h3>
+                        <p>Participation au Hackathon "Securité & Réseaux" organisé par mon établissement. Nous avons développé une solution de monitoring réseau en temps réel.</p>
+                        <a href="#" class="read-more">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Article 3 -->
+                <div class="news-card">
+                    <div class="news-header">
+                        <span class="news-date">25 Janvier 2025</span>
+                        <span class="news-category">Études</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>Admission en Licence Pro</h3>
+                        <p>Je suis officiellement admis en Licence Professionnelle "Administration et Sécurité des Systèmes et des Réseaux" à l'IUT de Strasbourg pour la rentrée 2025.</p>
+                        <a href="#" class="read-more">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Article 4 (exemple supplémentaire) -->
+                <div class="news-card">
+                    <div class="news-header">
+                        <span class="news-date">5 Décembre 2024</span>
+                        <span class="news-category">Stage</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>Stage de fin d'études confirmé</h3>
+                        <p>Mon stage de fin d'études a été confirmé chez TechSolutions SAS où je travaillerai sur l'optimisation de leur infrastructure réseau.</p>
+                        <a href="#" class="read-more">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Article 5 (exemple supplémentaire) -->
+                <div class="news-card">
+                    <div class="news-header">
+                        <span class="news-date">20 Novembre 2024</span>
+                        <span class="news-category">Formation</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>Formation Docker avancée</h3>
+                        <p>J'ai suivi une formation intensive sur Docker et l'orchestration de conteneurs, me permettant de maîtriser ces technologies essentielles pour le DevOps.</p>
+                        <a href="#" class="read-more">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Flèche droite -->
+            <button class="news-nav next" id="newsNext">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        
+        <!-- Indicateurs de position -->
+        <div class="news-indicators" id="newsIndicators">
+            <!-- Les indicateurs seront générés par JavaScript -->
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h3>Email</h3>
+                        <p>nikola.mikulic@example.com</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                        <h3>Téléphone</h3>
+                        <p>+33 6 12 34 56 78</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <h3>Localisation</h3>
+                        <p>Strasbourg, France</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <div>
+                        <h3>LinkedIn</h3>
+                        <p>linkedin.com/in/nikola-mikulic</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div>
+                        <h3>GitHub</h3>
+                        <p>github.com/nmikulic-sio</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nom complet</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Sujet</label>
+                        <input type="text" id="subject" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Envoyer le message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>Nikola Mikulic - Portfolio BTS SIO</p>
+        <p>© 2025 - Tous droits réservés</p>
+    </footer>
+
+    <script>
+        // Menu mobile
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Fermer le menu en cliquant sur un lien
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Gestion du formulaire de contact
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Merci pour votre message ! Je vous répondrai dans les plus brefs délais.');
+            this.reset();
+        });
+        
+        // Animation des barres de compétences au défilement
+        const observerOptions = {
+            threshold: 0.5
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const skillLevels = entry.target.querySelectorAll('.skill-level');
+                    skillLevels.forEach(level => {
+                        const width = level.style.width;
+                        level.style.width = '0';
+                        setTimeout(() => {
+                            level.style.width = width;
+                        }, 300);
+                    });
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.skill-category').forEach(category => {
+            observer.observe(category);
+        });
+        
+        // Gestion du défilement de la section News
+        const newsContainer = document.getElementById('newsContainer');
+        const newsPrevBtn = document.getElementById('newsPrev');
+        const newsNextBtn = document.getElementById('newsNext');
+        const newsIndicators = document.getElementById('newsIndicators');
+        
+        // Variables pour le défilement
+        let currentNewsIndex = 0;
+        const newsCards = document.querySelectorAll('.news-card');
+        const cardsPerView = window.innerWidth < 768 ? 1 : window.innerWidth < 992 ? 2 : 3;
+        
+        // Créer les indicateurs
+        function createIndicators() {
+            newsIndicators.innerHTML = '';
+            const totalIndicators = Math.max(newsCards.length - cardsPerView + 1, 1);
+            
+            for (let i = 0; i < totalIndicators; i++) {
+                const indicator = document.createElement('div');
+                indicator.classList.add('news-indicator');
+                if (i === 0) indicator.classList.add('active');
+                
+                indicator.addEventListener('click', () => {
+                    scrollToNewsIndex(i);
+                });
+                
+                newsIndicators.appendChild(indicator);
+            }
+        }
+        
+        // Mettre à jour les indicateurs
+        function updateIndicators() {
+            const indicators = document.querySelectorAll('.news-indicator');
+            indicators.forEach((indicator, index) => {
+                if (index === currentNewsIndex) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
+                }
+            });
+        }
+        
+        // Faire défiler vers un index spécifique
+        function scrollToNewsIndex(index) {
+            const cardWidth = newsCards[0].offsetWidth + 32; // width + gap
+            currentNewsIndex = Math.min(Math.max(index, 0), newsCards.length - cardsPerView);
+            newsContainer.scrollTo({
+                left: currentNewsIndex * cardWidth,
+                behavior: 'smooth'
+            });
+            updateIndicators();
+        }
+        
+        // Défilement vers la gauche
+        newsPrevBtn.addEventListener('click', () => {
+            if (currentNewsIndex > 0) {
+                scrollToNewsIndex(currentNewsIndex - 1);
+            }
+        });
+        
+        // Défilement vers la droite
+        newsNextBtn.addEventListener('click', () => {
+            if (currentNewsIndex < newsCards.length - cardsPerView) {
+                scrollToNewsIndex(currentNewsIndex + 1);
+            }
+        });
+        
+        // Mise à jour automatique des indicateurs lors du défilement
+        newsContainer.addEventListener('scroll', () => {
+            const cardWidth = newsCards[0].offsetWidth + 32;
+            const scrollPosition = newsContainer.scrollLeft;
+            currentNewsIndex = Math.round(scrollPosition / cardWidth);
+            updateIndicators();
+        });
+        
+        // Redimensionnement de la fenêtre
+        window.addEventListener('resize', () => {
+            // Recalculer les indicateurs si nécessaire
+            createIndicators();
+            updateIndicators();
+        });
+        
+        // Initialisation
+        createIndicators();
+        
+        // Navigation au clavier
+        document.addEventListener('keydown', (e) => {
+            if (document.getElementById('news').getBoundingClientRect().top < window.innerHeight && 
+                document.getElementById('news').getBoundingClientRect().bottom > 0) {
+                if (e.key === 'ArrowLeft') {
+                    newsPrevBtn.click();
+                } else if (e.key === 'ArrowRight') {
+                    newsNextBtn.click();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
