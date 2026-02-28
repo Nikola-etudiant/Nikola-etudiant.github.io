@@ -692,7 +692,7 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <h1>Nikola Mikulic - Étudiant en BTS SIO</h1>
-        <p>Spécialisé en <span class="highlight">Solutions d'Infrastructure, Systèmes et Réseaux (SISR)</span>, passionné par l'administration systèmes, la cybersécurité et l'avancée technologique !</p>
+        <p>Spécialisé en <span class="highlight">Solutions d'Infrastructure Systèmes et Réseaux (SISR)</span>, passionné par l'administration système, la cybersécurité et les avancées technologiques !</p>
         <a href="#projects" class="btn">Voir mes projets</a>
     </section>
 
@@ -701,9 +701,9 @@
         <h2 class="section-title">À propos de moi</h2>
         <div class="about-content">
             <div class="about-text">
-                <p>Je suis actuellement en deuxième année de BTS SIO (Services Informatiques aux Organisations) option SISR au Lycée Réne Cassin de Strasbourg.</p>
+                <p>Je suis actuellement en deuxième année de BTS SIO (Services Informatiques aux Organisations), option SISR, au Lycée Réne Cassin de Strasbourg.</p>
                 <br>
-                <p>Mon parcours m'a permis d'acquérir des compétences solides en administration réseau, virtualisation, cybersécurité et gestion du parc informatique.</p>
+                <p>Mon parcours m'a permis d'acquérir des compétences solides en administration réseau, virtualisation, cybersécurité et gestion du patrimoine informatique.</p>
                 <br>
                 <p>J'ai pu effectuer mes stages de BTS à la HEAR ou l'Haute école d'art du rhin, ce qui m'a permis de deployer toutes les connaissances apprises au sein de mon établissement, me permettant de contribuer à des projets intéressants et utiles.</p>
                 <br>
@@ -765,7 +765,7 @@
             </div>
             
             <div class="skill-category">
-                <h3>Développement & Bases de données</h3>
+                <h3>Développement & Base de données</h3>
                 <div class="skill-item">
                     <div class="skill-name">
                         <span>HTML/CSS/PowerShell</span>
@@ -790,8 +790,8 @@
                 <h3>Cybersécurité & Outils</h3>
                 <div class="skill-item">
                     <div class="skill-name">
-                        <span>Sécurité des réseaux</span>
-                        <span>75%</span>
+                        <span>Sécurisation des réseaux</span>
+                        <span>8ß%</span>
                     </div>
                     <div class="skill-bar">
                         <div class="skill-level" style="width: 75%;"></div>
@@ -799,8 +799,8 @@
                 </div>
                 <div class="skill-item">
                     <div class="skill-name">
-                        <span>Wireshark</span>
-                        <span>70%</span>
+                        <span>GLPI</span>
+                        <span>90%</span>
                     </div>
                     <div class="skill-bar">
                         <div class="skill-level" style="width: 70%;"></div>
@@ -808,7 +808,7 @@
                 </div>
                 <div class="skill-item">
                     <div class="skill-name">
-                        <span>Git/GitHub</span>
+                        <span>GitHub</span>
                         <span>85%</span>
                     </div>
                     <div class="skill-bar">
@@ -838,12 +838,13 @@
                 </div>
                 <div class="project-info">
                     <h3>Installation d'un serveur MDM</h3>
-                    <p>Mise en place d'un serveur virtuel MDM utilisé pour géré les appareils Android de l'école. Cela permet notamment de créer un profile permenttant une séparation de la vie personel et professionnel sur un seul appareil.</p>
+                    <p>Mise en place d'une VM utilisé pour géré les appareils Android de l'école avec la solution ManageEngine MDM. Cela permet notamment de créer un profile permenttant une séparation de la vie personel et professionnel sur un seul appareil. J'ai d'abort mis en place l'ecosysteme du MDM sur la solution cloud de ManageEngine puis j'ai effectuer une migration sur un serveur local.</p>
                     <div class="project-tags">
                         <span class="tag">Windows Server</span>
                         <span class="tag">Android / IOS</span>
                         <span class="tag">MDM</span>
                     </div>
+                    <br><p style="text-align: center; color: #e74c3c;"> Projet réaliser seul et en autonomie</p>
                 </div>
             </div>
             
@@ -853,27 +854,29 @@
                 </div>
                 <div class="project-info">
                     <h3>Mise en place d'un serveur SNMP</h3>
-                    <p>Création d'un serveur SNMP pour recuperer les données envoyer par les appareils réseaux via le protocole SNMP, cela permet un monitoring du trafic réseau, de l'utilisation du processeur ou de la memoire système ainsi que des VLANs.</p>
+                    <p>Création d'un serveur SNMP pour recuperer les données envoyer par les appareils réseaux via le protocole SNMP, cela permet un monitoring du trafic réseau, de l'utilisation du processeur ou de la memoire système ainsi que des VLANs. Ce serveur à été créer avec Observium, un outil de monitoring en SNMP que j'ai installer sur un serveur Linux.</p>
                     <div class="project-tags">
                         <span class="tag">Supervision</span>
                         <span class="tag">Observium</span>
                         <span class="tag">SNMP</span>
                     </div>
+                    <br><p style="text-align: center; color: #e74c3c;"> Projet réaliser seul et en autonomie</p>
                 </div>
             </div>
             
             <div class="project-card">
                 <div class="project-img" style="background-color: #ee1b03;">
-                    <i class="fas fa-shield-alt" style="color: #ffffff; font-size: 3rem;"></i>
+                    <i class="fas fa-server" style="color: #ffffff; font-size: 3rem;"></i>
                 </div>
                 <div class="project-info">
-                    <h3>Réalisation d'une DMZ</h3>
-                    <p>Céation et configuration d'une DMZ virtuel sur VirtualBox.</p>
+                    <h3>Mise en place d'un Hyperviseur</h3>
+                    <p>Mise en œuvre d’un hyperviseur à partir de Proxmox VE sur un serveur HP. Cette Hyperviseur servira à deployer une VM Ubuntu serveur qui hebergera des sites web. L’installation est effectuée en créant une clé bootable Proxmox. Après l’installation de Proxmox, adressage réseau via le CLI afin de permettre ensuite une connexion via navigateur pour administrer le serveur.</p>
                     <div class="project-tags">
-                        <span class="tag">DMZ</span>
-                        <span class="tag">Sécurité</span>
+                        <span class="tag">Hyperviseur</span>
+                        <span class="tag">Proxmox</span>
                         <span class="tag">Réseau</span>
                     </div>
+                    <br><p style="text-align: center; color: #e74c3c;"> Projet réaliser seul et en autonomie</p>
                 </div>
             </div>
         </div>
@@ -889,8 +892,8 @@
                     <h3>Stage - Assistant informatique</h3>
                     <p><strong>Établissement :</strong> HEAR</p>
                     <p>• Mise en place d'un serveur MDM pour la gestion du parc Smartphone<br>
-                       • Mise a jour de systemes Windows en Windows 11<br>
-                       • Assistance aux utilisateurs et résolution d'incidents</p>
+                       • Mise en place d'un Hyperviseur pour la virtualisation<br>
+                       • Assistance aux utilisateurs et résolution d'incidents (Tickets)</p>
                 </div>
             </div>
             
@@ -910,7 +913,7 @@
                     <span class="timeline-date">2024</span>
                     <h3>Projet : Tableau de score</h3>
                     <p><strong>Entreprise :</strong> SMI de l'est</p>
-                    <p>• Création d'un serveur de déplyement Windows pour déployer des OS en réseau</p>
+                    <p>• Création d'un serveur de déployement Windows pour déployer des OS en réseau</p>
                 </div>
             </div>
             
@@ -920,7 +923,7 @@
                     <h3>Baccalauréat SN</h3>
                     <p><strong>Option :</strong> C (Réseaux informatiques et systèmes communicants)</p>
                     <p>• Initiation aux réseaux<br>
-                       • Projet de terminale : Tableau de score pour le gymnase du lycee</p>
+                       • Projet de terminale : Tableau de score commander à distance pour le gymnase du lycee</p>
                 </div>
             </div>
         </div>
@@ -941,65 +944,65 @@
                 <!-- Article 1 -->
                 <div class="news-card">
                     <div class="news-header">
-                        <span class="news-date">15 Mars 2025</span>
-                        <span class="news-category">Certification</span>
+                        <span class="news-date">16 janvier 2026</span>
+                        <span class="news-category">CNIL</span>
                     </div>
                     <div class="news-content">
-                        <h3>Nouvelle Certification Cybersécurité</h3>
-                        <p>J'ai récemment obtenu la certification "Fundamentals of Cybersecurity" qui valide mes compétences en sécurité des systèmes d'information et protection des données.</p>
-                        <a href="#" class="read-more">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                        <h3>Cookies et autres traceurs</h3>
+                        <p>À quelles conditions peut-on consentir en une fois pour plusieurs appareils ?</p>
+                        <a href="https://www.cnil.fr/fr/cookies-et-autres-traceurs-quelles-conditions-consentir-en-une-fois-pour-plusieurs-appareils" class="read-more" target="_blank">En savoir plus <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 
                 <!-- Article 2 -->
                 <div class="news-card">
                     <div class="news-header">
-                        <span class="news-date">10 Février 2025</span>
-                        <span class="news-category">Projet</span>
+                        <span class="news-date">14 janvier 2026</span>
+                        <span class="news-category">CNIL</span>
                     </div>
                     <div class="news-content">
-                        <h3>Participation à un Hackathon</h3>
-                        <p>Participation au Hackathon "Securité & Réseaux" organisé par mon établissement. Nous avons développé une solution de monitoring réseau en temps réel.</p>
-                        <a href="#" class="read-more">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                        <h3>Violation de données :</h3>
+                        <p>Sanction de 42 millions d’euros à l’encontre des sociétés FREE MOBILE et FREE</p>
+                        <a href="sanction de 42 millions d’euros à l’encontre des sociétés FREE MOBILE et FREE" class="read-more" target="_blank">En savoir plus <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 
                 <!-- Article 3 -->
                 <div class="news-card">
                     <div class="news-header">
-                        <span class="news-date">25 Janvier 2025</span>
-                        <span class="news-category">Études</span>
+                        <span class="news-date">9 février 2026</span>
+                        <span class="news-category">ANSSI</span>
                     </div>
                     <div class="news-content">
-                        <h3>Admission en Licence Pro</h3>
-                        <p>Je suis officiellement admis en Licence Professionnelle "Administration et Sécurité des Systèmes et des Réseaux" à l'IUT de Strasbourg pour la rentrée 2025.</p>
-                        <a href="#" class="read-more">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                        <h3>L’ANSSI met à jour sa politique open source</h3>
+                        <p>L’ANSSI s’engage de longue date au sein de l’écosystème open source, contribuant activement au renforcement de sa sécurité et à la diffusion de solutions numériques de confiance.</p>
+                        <a href="https://cyber.gouv.fr/actualites/lanssi-met-a-jour-sa-politique-open-source/" class="read-more" target="_blank">En savoir plus <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 
                 <!-- Article 4 (exemple supplémentaire) -->
                 <div class="news-card">
                     <div class="news-header">
-                        <span class="news-date">5 Décembre 2024</span>
-                        <span class="news-category">Stage</span>
+                        <span class="news-date">4 février 2026</span>
+                        <span class="news-category">ANSSI</span>
                     </div>
                     <div class="news-content">
-                        <h3>Stage de fin d'études confirmé</h3>
-                        <p>Mon stage de fin d'études a été confirmé chez TechSolutions SAS où je travaillerai sur l'optimisation de leur infrastructure réseau.</p>
-                        <a href="#" class="read-more">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                        <h3>Synthèse de la menace sur l’IA générative face aux attaques informatiques</h3>
+                        <p>Technologie innovante, performante et flexible, l’IA générative est aujourd’hui employée de manière massive et intégrée à de nombreux usages.</p>
+                        <a href="https://cyber.gouv.fr/actualites/synthese-de-la-menace-sur-lia-generative-face-aux-attaques-informatiques/" class="read-more" target="_blank">En savoir plus <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 
                 <!-- Article 5 (exemple supplémentaire) -->
                 <div class="news-card">
                     <div class="news-header">
-                        <span class="news-date">20 Novembre 2024</span>
-                        <span class="news-category">Formation</span>
+                        <span class="news-date">29 décembre 2025</span>
+                        <span class="news-category">CNIL</span>
                     </div>
                     <div class="news-content">
-                        <h3>Formation Docker avancée</h3>
-                        <p>J'ai suivi une formation intensive sur Docker et l'orchestration de conteneurs, me permettant de maîtriser ces technologies essentielles pour le DevOps.</p>
-                        <a href="#" class="read-more">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                        <h3>Avis et notations en ligne : quels sont les droits des professionnels ?</h3>
+                        <p>Les professionnels (médecins, avocats, notaires, etc.) sont de plus en plus évalués en ligne via des annuaires intégrant des systèmes de notation et de commentaires. </p>
+                        <a href="https://www.cnil.fr/fr/avis-et-notations-en-ligne-quels-sont-les-droits-des-professionnels" class="read-more" target="_blank">En savoir plus <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -1027,7 +1030,7 @@
                     </div>
                     <div>
                         <h3>Email</h3>
-                        <p>nikola.mikulic@example.com</p>
+                        <p>mikulic.contact@gmail.com</p>
                     </div>
                 </div>
                 
@@ -1037,7 +1040,7 @@
                     </div>
                     <div>
                         <h3>Téléphone</h3>
-                        <p>+33 6 12 34 56 78</p>
+                        <p>07 81 97 05 44</p>
                     </div>
                 </div>
                 
@@ -1046,8 +1049,8 @@
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
                     <div>
-                        <h3>Localisation</h3>
-                        <p>Strasbourg, France</p>
+                        <h3>Adresse</h3>
+                        <p>Goersdorf, Alsace, 67360</p>
                     </div>
                 </div>
                 
@@ -1057,17 +1060,7 @@
                     </div>
                     <div>
                         <h3>LinkedIn</h3>
-                        <p>linkedin.com/in/nikola-mikulic</p>
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fab fa-github"></i>
-                    </div>
-                    <div>
-                        <h3>GitHub</h3>
-                        <p>github.com/nmikulic-sio</p>
+                        <a href="https://www.linkedin.com/in/nikola-mikulic-378b00330/" target="_blank">Nikola Mikulic</a>
                     </div>
                 </div>
             </div>
@@ -1103,12 +1096,12 @@
     <!-- Footer -->
     <footer>
         <div class="social-links">
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
+            <i class="fab fa-linkedin"></i>
+            <i class="fab fa-github"></i>
+            <i class="fab fa-twitter"></i>
         </div>
         <p>Nikola Mikulic - Portfolio BTS SIO</p>
-        <p>© 2025 - Tous droits réservés</p>
+        <p>© 2026 - Tous droits réservés</p>
     </footer>
 
     <script>
