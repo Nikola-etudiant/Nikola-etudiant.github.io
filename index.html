@@ -936,95 +936,182 @@
         </div>
     </section>
 
-    <!-- Section News -->
-    <section id="news" class="news-section">
-        <h2 class="section-title">News & Actualités</h2>
+    <!-- Section Veille Technologique -->
+<section id="veille" class="veille-section">
+    <h2 class="section-title">Veille Technologique</h2>
+    
+    <!-- Introduction à la veille technologique -->
+    <div class="veille-intro">
+        <div class="intro-card">
+            <i class="fas fa-search" style="font-size: 2.5rem; color: #4CAF50; margin-bottom: 15px;"></i>
+            <h3 style="color: #333; margin-bottom: 15px;">Qu'est-ce que la veille technologique ?</h3>
+            <p style="line-height: 1.8; color: #666;">
+                La veille technologique est un processus systématique de collecte, d'analyse et de diffusion d'informations 
+                techniques et scientifiques. Elle permet de se tenir informé des dernières innovations, des tendances émergentes 
+                et des évolutions dans un domaine spécifique. Pour un professionnel de l'informatique, c'est un outil essentiel 
+                qui permet d'anticiper les changements, d'identifier les opportunités et de maintenir ses compétences à jour 
+                face à un secteur en constante évolution.
+            </p>
+        </div>
+    </div>
+
+    <!-- Pourquoi ce sujet ? -->
+    <div class="veille-pourquoi">
+        <h3 style="color: #333; margin: 40px 0 20px; text-align: center;">
+            <i class="fas fa-microchip" style="color: #4CAF50;"></i> 
+            Pourquoi la sécurité avec l'IA ?
+        </h3>
         
-        <div class="news-container-wrapper">
-            <!-- Flèche gauche -->
-            <button class="news-nav prev" id="newsPrev">
-                <i class="fas fa-chevron-left"></i>
-            </button>
+        <div class="justification-container" style="max-width: 800px; margin: 0 auto; background: #f9f9f9; padding: 25px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+            <p style="line-height: 1.8; color: #555; margin-bottom: 20px;">
+                J'ai choisi le thème <strong>"La sécurité avec l'Intelligence Artificielle"</strong> car l'IA est aujourd'hui au cœur 
+                des enjeux de cybersécurité, soulevant des questions éthiques, techniques et géopolitiques majeures. L'actualité 
+                récente démontre que l'IA n'est plus seulement un outil technologique, mais devient un acteur stratégique 
+                aux implications profondes pour nos sociétés.
+            </p>
             
-            <!-- Conteneur des cartes News -->
-            <div class="news-container" id="newsContainer">
-                <!-- Article 1 -->
-                <div class="news-card">
-                    <div class="news-header">
-                        <span class="news-date">16 janvier 2026</span>
-                        <span class="news-category">CNIL</span>
-                    </div>
-                    <div class="news-content">
-                        <h3>Cookies et autres traceurs</h3>
-                        <p>À quelles conditions peut-on consentir en une fois pour plusieurs appareils ?</p>
-                        <a href="https://www.cnil.fr/fr/cookies-et-autres-traceurs-quelles-conditions-consentir-en-une-fois-pour-plusieurs-appareils" class="read-more" target="_blank">En savoir plus <i class="fas fa-arrow-right"></i></a>
-                    </div>
+            <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #4CAF50;">
+                <p style="font-style: italic; color: #444;">
+                    <i class="fas fa-quote-left" style="color: #4CAF50; margin-right: 5px;"></i>
+                    La sécurité avec l'IA représente un double défi : comment sécuriser les systèmes d'IA, et comment utiliser 
+                    l'IA comme outil de sécurité ? Cette dualité rend le sujet particulièrement passionnant et pertinent pour 
+                    un futur professionnel du BTS SIO.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Articles de veille -->
+    <div class="articles-container" style="margin: 50px 0;">
+        <h3 style="color: #333; margin: 40px 0 20px; text-align: center;">
+            <i class="fas fa-newspaper" style="color: #4CAF50;"></i> 
+            Mes articles de veille
+        </h3>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+            <!-- Article n°1 -->
+            <div style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s;" 
+                 onmouseover="this.style.transform='translateY(-5px)'" 
+                 onmouseout="this.style.transform='translateY(0)'">
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; text-align: center;">
+                    <i class="fas fa-shield-alt" style="font-size: 3rem; color: white;"></i>
                 </div>
-                
-                <!-- Article 2 -->
-                <div class="news-card">
-                    <div class="news-header">
-                        <span class="news-date">14 janvier 2026</span>
-                        <span class="news-category">CNIL</span>
-                    </div>
-                    <div class="news-content">
-                        <h3>Violation de données :</h3>
-                        <p>Sanction de 42 millions d’euros à l’encontre des sociétés FREE MOBILE et FREE</p>
-                        <a href="sanction de 42 millions d’euros à l’encontre des sociétés FREE MOBILE et FREE" class="read-more" target="_blank">En savoir plus <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                
-                <!-- Article 3 -->
-                <div class="news-card">
-                    <div class="news-header">
-                        <span class="news-date">9 février 2026</span>
-                        <span class="news-category">ANSSI</span>
-                    </div>
-                    <div class="news-content">
-                        <h3>L’ANSSI met à jour sa politique open source</h3>
-                        <p>L’ANSSI s’engage de longue date au sein de l’écosystème open source, contribuant activement au renforcement de sa sécurité et à la diffusion de solutions numériques de confiance.</p>
-                        <a href="https://cyber.gouv.fr/actualites/lanssi-met-a-jour-sa-politique-open-source/" class="read-more" target="_blank">En savoir plus <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                
-                <!-- Article 4 (exemple supplémentaire) -->
-                <div class="news-card">
-                    <div class="news-header">
-                        <span class="news-date">4 février 2026</span>
-                        <span class="news-category">ANSSI</span>
-                    </div>
-                    <div class="news-content">
-                        <h3>Synthèse de la menace sur l’IA générative face aux attaques informatiques</h3>
-                        <p>Technologie innovante, performante et flexible, l’IA générative est aujourd’hui employée de manière massive et intégrée à de nombreux usages.</p>
-                        <a href="https://cyber.gouv.fr/actualites/synthese-de-la-menace-sur-lia-generative-face-aux-attaques-informatiques/" class="read-more" target="_blank">En savoir plus <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                
-                <!-- Article 5 (exemple supplémentaire) -->
-                <div class="news-card">
-                    <div class="news-header">
-                        <span class="news-date">29 décembre 2025</span>
-                        <span class="news-category">CNIL</span>
-                    </div>
-                    <div class="news-content">
-                        <h3>Avis et notations en ligne : quels sont les droits des professionnels ?</h3>
-                        <p>Les professionnels (médecins, avocats, notaires, etc.) sont de plus en plus évalués en ligne via des annuaires intégrant des systèmes de notation et de commentaires. </p>
-                        <a href="https://www.cnil.fr/fr/avis-et-notations-en-ligne-quels-sont-les-droits-des-professionnels" class="read-more" target="_blank">En savoir plus <i class="fas fa-arrow-right"></i></a>
-                    </div>
+                <div style="padding: 20px;">
+                    <span style="background: #667eea; color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem;">ICTjournal - 2026</span>
+                    <h4 style="margin: 15px 0; color: #333;">L'IA au cœur des opérations militaires</h4>
+                    <p style="color: #666; line-height: 1.6; margin-bottom: 15px;">
+                        Cet article explore comment l'IA transforme les opérations militaires, soulevant des questions cruciales 
+                        sur la sécurité et l'éthique. L'automatisation des décisions stratégiques par l'IA présente des risques 
+                        majeurs en termes de cybersécurité et de contrôle humain.
+                    </p>
+                    <p style="color: #4CAF50; font-weight: 500; font-size: 0.9rem;">
+                        <i class="fas fa-lightbulb"></i> 
+                        Pourquoi cet article m'intéresse : Il illustre parfaitement les enjeux de sécurité critique liés à l'IA.
+                    </p>
                 </div>
             </div>
-            
-            <!-- Flèche droite -->
-            <button class="news-nav next" id="newsNext">
-                <i class="fas fa-chevron-right"></i>
-            </button>
+
+            <!-- Article n°2 -->
+            <div style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s;"
+                 onmouseover="this.style.transform='translateY(-5px)'"
+                 onmouseout="this.style.transform='translateY(0)'">
+                <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 20px; text-align: center;">
+                    <i class="fas fa-robot" style="font-size: 3rem; color: white;"></i>
+                </div>
+                <div style="padding: 20px;">
+                    <span style="background: #f093fb; color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem;">INCYBER - 2026</span>
+                    <h4 style="margin: 15px 0; color: #333;">Palantir, ange ou démon ?</h4>
+                    <p style="color: #666; line-height: 1.6; margin-bottom: 15px;">
+                        L'article examine le rôle controversé de Palantir dans l'analyse de données pour la sécurité. 
+                        Il met en lumière les tensions entre innovation technologique, protection des données et libertés 
+                        individuelles.
+                    </p>
+                    <p style="color: #4CAF50; font-weight: 500; font-size: 0.9rem;">
+                        <i class="fas fa-lightbulb"></i> 
+                        Pourquoi cet article m'intéresse : Il montre les dilemmes éthiques entre sécurité et vie privée.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Article n°3 -->
+            <div style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s;"
+                 onmouseover="this.style.transform='translateY(-5px)'"
+                 onmouseout="this.style.transform='translateY(0)'">
+                <div style="background: linear-gradient(135deg, #5f2c82 0%, #49a09d 100%); padding: 20px; text-align: center;">
+                    <i class="fas fa-gavel" style="font-size: 3rem; color: white;"></i>
+                </div>
+                <div style="padding: 20px;">
+                    <span style="background: #5f2c82; color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem;">Journal.info - 2026</span>
+                    <h4 style="margin: 15px 0; color: #333;">L'IA a-t-elle le droit de tuer ?</h4>
+                    <p style="color: #666; line-height: 1.6; margin-bottom: 15px;">
+                        Cet article aborde la question fondamentale de la responsabilité légale et éthique des systèmes d'IA 
+                        autonomes. Jusqu'où peut-on déléguer des décisions engageant des vies humaines à une machine ?
+                    </p>
+                    <p style="color: #4CAF50; font-weight: 500; font-size: 0.9rem;">
+                        <i class="fas fa-lightbulb"></i> 
+                        Pourquoi cet article m'intéresse : Il pose la question ultime des limites éthiques de l'IA.
+                    </p>
+                </div>
+            </div>
         </div>
-        
-        <!-- Indicateurs de position -->
-        <div class="news-indicators" id="newsIndicators">
-            <!-- Les indicateurs seront générés par JavaScript -->
+    </div>
+
+    <!-- Synthèse des articles -->
+    <div style="background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 30px; border-radius: 15px; margin: 40px 0;">
+        <h4 style="color: #333; margin-bottom: 20px;">🔍 Synthèse de ma veille :</h4>
+        <p style="line-height: 1.8; color: #444;">
+            Ces trois articles montrent que la sécurité avec l'IA est un sujet multidimensionnel. <strong>L'article n°1</strong> 
+            souligne les risques sécuritaires de l'IA dans des contextes critiques. <strong>L'article n°2</strong> met en évidence 
+            les tensions entre innovation et protection des données. Enfin, <strong>l'article n°3</strong> pose la question 
+            fondamentale de la responsabilité éthique. Ensemble, ils démontrent que la maîtrise de l'IA est devenue un enjeu 
+            majeur de souveraineté et de sécurité.
+        </p>
+    </div>
+
+    <!-- Outil de veille : Google Alertes -->
+    <div class="outil-veille" style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); margin: 40px 0;">
+        <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 250px;">
+                <i class="fab fa-google" style="font-size: 3rem; color: #4CAF50;"></i>
+                <h4 style="color: #333; margin: 15px 0;">Google Alertes : Mon outil de veille</h4>
+                <div style="background: #f9f9f9; padding: 15px; border-radius: 8px;">
+                    <p style="margin: 5px 0;"><i class="fas fa-check-circle" style="color: #4CAF50;"></i> <strong>Fréquence :</strong> 1 fois par semaine</p>
+                    <p style="margin: 5px 0;"><i class="fas fa-check-circle" style="color: #4CAF50;"></i> <strong>Gratuit :</strong> 100% sans frais</p>
+                    <p style="margin: 5px 0;"><i class="fas fa-check-circle" style="color: #4CAF50;"></i> <strong>Filtrable :</strong> Mots-clés précis</p>
+                    <p style="margin: 5px 0;"><i class="fas fa-check-circle" style="color: #4CAF50;"></i> <strong>Direct :</strong> Reçu par email</p>
+                </div>
+            </div>
+            <div style="flex: 2;">
+                <p style="line-height: 1.8; color: #555;">
+                    Pour ma veille technologique, j'utilise <strong>Google Alertes</strong>, un outil simple mais redoutablement efficace. 
+                    Une fois par semaine, je reçois directement dans ma boîte mail les dernières actualités correspondant à mes mots-clés.
+                    <br><br>
+                    J'ai configuré des alertes sur des termes comme <em>"sécurité IA"</em>, <em>"cybersécurité intelligence artificielle"</em> 
+                    ou encore <em>"AI security ethics"</em>. Google Alertes me permet de filtrer les sources et d'obtenir uniquement 
+                    des informations pertinentes, sans avoir à chercher manuellement.
+                </p>
+            </div>
         </div>
-    </section>
+    </div>
+
+    <!-- Mots-clés de veille -->
+    <div style="text-align: center; margin-top: 30px;">
+        <h4 style="color: #333; margin-bottom: 15px;">Mes mots-clés de veille :</h4>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+            <span style="background: #e8f5e9; color: #4CAF50; padding: 8px 18px; border-radius: 25px; font-size: 0.9rem;">#SécuritéIA</span>
+            <span style="background: #e8f5e9; color: #4CAF50; padding: 8px 18px; border-radius: 25px; font-size: 0.9rem;">#CyberSécurité</span>
+            <span style="background: #e8f5e9; color: #4CAF50; padding: 8px 18px; border-radius: 25px; font-size: 0.9rem;">#AIethics</span>
+            <span style="background: #e8f5e9; color: #4CAF50; padding: 8px 18px; border-radius: 25px; font-size: 0.9rem;">#MachineLearning</span>
+            <span style="background: #e8f5e9; color: #4CAF50; padding: 8px 18px; border-radius: 25px; font-size: 0.9rem;">#GouvernanceIA</span>
+            <span style="background: #e8f5e9; color: #4CAF50; padding: 8px 18px; border-radius: 25px; font-size: 0.9rem;">#Palantir</span>
+        </div>
+    </div>
+
+    <!-- Date de mise à jour -->
+    <div style="text-align: right; margin-top: 30px; color: #999; font-size: 0.85rem;">
+        <i class="far fa-calendar-alt"></i> Veille mise à jour : Mars 2026
+    </div>
+</section>
 
     <!-- Contact -->
     <section id="contact">
@@ -1266,6 +1353,7 @@
     </script>
 </body>
 </html>
+
 
 
 
